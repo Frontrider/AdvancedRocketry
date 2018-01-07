@@ -108,6 +108,10 @@ tile.spaceElevatorController.name=Space Elevator
 tile.beacon.name=Beacon
 tile.thermiteTorch.name=Thermite Torch
 
+tile.moonstone.name=Moon Stone
+tile.chiseled_moonstone.name=Chiseled Moon Stone
+tile.smooth_moonstone.name=Smooth Moon Stone
+
 tile.Dilithium.name=Dilithium Ore
 
 tile.coil.dilithium.name=Dilithium Coil
@@ -207,45 +211,47 @@ error.rocket.cannotGetThere=Destination Unreachable
 error.rocket.destinationNotExist=Cannot launch: destination does not exist
 error.rocket.notSameSystem=Cannot launch: destination is not in the same planet system
 
-achievement.holographic=Holographic
-achievement.holographic.desc=Craft a Holo-Projector
+
+advancements.advancedrocketry.root.title=Advanced Rocketry
+advancements.advancedrocketry.root.description=Explore Space
+
+advancements.advancedrocketry.holographic.title=Holographic
+advancements.advancedrocketry.holographic.desc=Craft a Holo-Projector
 achievement.flattening=Flattening
 achievement.flattening.desc=Make a Small Plate Presser
-achievement.feelTheHeat=Feel The Heat!
-achievement.feelTheHeat.desc=Craft an Arc Furnace
-achievement.electrifying=Electrifying!
-achievement.electrifying.desc=Craft an Electrolyser
-achievement.spinDoctor=Spin Doctor
-achievement.spinDoctor.desc=Craft a Lathe
-achievement.rollin=Rollin'
-achievement.rollin.desc=Craft a Rolling Machine
-achievement.crystalline=Crystalline
-achievement.crystalline.desc=Craft a Crystallizer
-achievement.warp=Warp
-achievement.warp.desc=Build a warp core
-achievement.moonLanding=Moon Landing!
-achievement.moonLanding.desc=Land on the moon
-achievement.oneSmallStep=One Small Step...
-achievement.oneSmallStep.desc=Be the first to land on the moon!
+advancements.advancedrocketry.feelTheHeat.title=Feel The Heat!
+advancements.advancedrocketry.feelTheHeat.desc=Craft an Arc Furnace
+advancements.advancedrocketry.electrifying.title=Electrifying!
+advancements.advancedrocketry.electrifying.desc=Craft an Electrolyser
+advancements.advancedrocketry.spinDoctor.title=Spin Doctor
+advancements.advancedrocketry.spinDoctor.desc=Craft a Lathe
+advancements.advancedrocketry.rollin.title=Rollin'
+advancements.advancedrocketry.rollin.desc=Craft a Rolling Machine
+advancements.advancedrocketry.crystalline.title=Crystalline
+advancements.advancedrocketry.crystalline.desc=Craft a Crystallizer
+advancements.advancedrocketry.warp.title=Warp
+advancements.advancedrocketry.warp.desc=Build a warp core
+advancements.advancedrocketry.moonLanding.title=Moon Landing!
+advancements.advancedrocketry.moonLanding.desc=Get To the Moon.
+advancements.advancedrocketry.oneSmallStep.title=One Small Step for a man...
+advancements.advancedrocketry.oneSmallStep.desc=Land on the Moon.
 achievement.weReallyWentToTheMoon=We Really Went to the moon!
 achievement.weReallyWentToTheMoon.desc=Find the Apollo 11 landing site on the Moon
-achievement.dilithium=Dilithium
-achievement.dilithium.desc=Find Dilithium ore
+advancements.advancedrocketry.dilithium.title=Dilithium
+advancements.advancedrocketry.dilithium.desc=Find Dilithium ore
 achievement.givingItAllShesGot=Giving it all she's got!
 achievement.givingItAllShesGot.desc=Fly in a Warp Capable ship
 achievement.flightOfThePhoenix=Flight of the Phoenix
 achievement.flightOfThePhoenix.desc=Build and fly the first warp capable ship
 achievement.beerOnTheSun=Adult Beverages on the sun
 achievement.beerOnTheSun.desc=You'll need more TNT to get to orbit
-achievement.suitedUp=Suited Up
-achievement.suitedUp.desc=Wear a full spacesuit
+advancements.advancedrocketry.suitedUp=Suited Up
+advancements.advancedrocketry.suitedUp.desc=Wear a full spacesuit
 
 
 key.controls.advancedrocketry=Advanced Rocketry
 key.openRocketUI=Open Rocket GUI
 key.toggleJetpack=Toggle Jetpack
-
-enchantment.advancedrocketry.spacebreathing.desc=Allows the piece of armor to form an airtight seal
 
 msg.observetory.scan.tooltip=Scans for new asteroids, consumes 100 distance data
 msg.observetory.scan.button=Scan!

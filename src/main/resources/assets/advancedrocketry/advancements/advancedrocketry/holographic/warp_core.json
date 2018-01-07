@@ -1,0 +1,36 @@
+{
+  "display":{
+    "description":{
+      "translate":"advancements.advancedrocketry.warp.desc",
+      "color":"red"
+    },
+    "title":{
+      "translate":"advancements.advancedrocketry.warp.title",
+      "color":"dark_gray"
+    },
+    "icon":{
+      "item":"advancedrocketry:warpcore"
+    }
+  },
+  "parent": "advancedrocketry:advancedrocketry/holographic",
+  "criteria":{
+    "craft":{
+      "trigger":"minecraft:inventory_changed",
+      "conditions":{
+        "items": [
+          {
+            "item": "advancedrocketry:warpcore"
+          }
+        ]
+      }
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "craft"
+    ]
+  ]
+}

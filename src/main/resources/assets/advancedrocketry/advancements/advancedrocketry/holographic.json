@@ -1,0 +1,36 @@
+{
+  "display":{
+    "description":{
+      "translate":"advancements.advancedrocketry.holographic.desc",
+      "color":"white"
+    },
+    "title":{
+      "translate":"advancements.advancedrocketry.holographic.title",
+      "color":"dark_gray"
+    },
+    "icon":{
+      "item":"libvulpes:holoprojector"
+    }
+  },
+  "parent": "advancedrocketry:advancedrocketry/root",
+  "criteria":{
+    "holo_projector":{
+      "trigger":"minecraft:inventory_changed",
+      "conditions":{
+        "items": [
+          {
+            "item": "libvulpes:holoprojector"
+          }
+        ]
+      }
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "holo_projector"
+    ]
+  ]
+}

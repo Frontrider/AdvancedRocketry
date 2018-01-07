@@ -6,13 +6,23 @@ import java.util.List;
 
 import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
+import zmaster587.advancedRocketry.world.biome.*;
+
+import static zmaster587.advancedRocketry.api.Configuration.config;
 
 
 /**
  * Stores information relating to the biomes and biome registry of AdvancedRocketry
  */
+@Mod.EventBusSubscriber
 public class AdvancedRocketryBiomes {
+
+	private static final String BIOMECATETORY = "Biomes";
+
 
 	public static final AdvancedRocketryBiomes instance = new AdvancedRocketryBiomes();
 	private List<Biome> registeredBiomes;
@@ -21,6 +31,8 @@ public class AdvancedRocketryBiomes {
 	private static List<Integer> blackListedBiomeIds;
 
 	public static Biome moonBiome;
+	public static BiomeBase moonHills;
+	public static BiomeBase moonHillsM;
 	public static Biome hotDryBiome;
 	public static Biome alienForest;
 	public static Biome spaceBiome;
@@ -29,6 +41,8 @@ public class AdvancedRocketryBiomes {
 	public static Biome swampDeepBiome;
 	public static Biome marsh;
 	public static Biome oceanSpires;
+
+	public static Biome frozenOcean;
 
 	private AdvancedRocketryBiomes() {
 		registeredBiomes = new ArrayList<Biome>();
@@ -133,4 +147,37 @@ public class AdvancedRocketryBiomes {
 		return Biome.getBiome(id);
 	}
 
+
+	//Biome registry.
+	@SubscribeEvent
+	public static void register(RegistryEvent.Register<Biome> evt)
+	{
+		System.out.println("REGISTERING BIOMES");
+		moonBiome = new BiomeGenMoon(config.get(BIOMECATETORY, "moonBiomeId", 110).getInt(), true);
+		//TODO: Sanitize biome classes
+		moonHills = new BiomeGenMoonMountain(config.get(BIOMECATETORY, "moonHillBiomeId", 119).getInt(), true);
+		moonHillsM = new BiomeGenMoonMountainM(config.get(BIOMECATETORY, "moonHillMBiomeId", 119).getInt(), true);
+		alienForest = new BiomeGenAlienForest(config.get(BIOMECATETORY, "alienForestBiomeId", 111).getInt(), true);
+		hotDryBiome = new BiomeGenHotDryRock(config.get(BIOMECATETORY, "hotDryBiome", 112).getInt(), true);
+		spaceBiome = new BiomeGenSpace(config.get(BIOMECATETORY, "spaceBiomeId", 113).getInt(), true);
+		stormLandsBiome = new BiomeGenStormland(config.get(BIOMECATETORY, "stormLandsBiomeId", 114).getInt(), true);
+		crystalChasms = new BiomeGenCrystal(config.get(BIOMECATETORY, "crystalChasmsBiomeId", 115).getInt(), true);
+		swampDeepBiome = new BiomeGenDeepSwamp(config.get(BIOMECATETORY, "deepSwampBiomeId", 116).getInt(), true);
+		marsh = new BiomeGenMarsh(config.get(BIOMECATETORY, "marsh", 117).getInt(), true);
+		oceanSpires = new BiomeGenOceanSpires(config.get(BIOMECATETORY, "oceanSpires", 118).getInt(), true);
+		frozenOcean = new BiomeGenFrozenOcean(config.get(BIOMECATETORY, "frozenOceanBiomeId", 120).getInt(), true);
+
+		instance.registerBiome(moonBiome, evt.getRegistry());
+		instance.registerBiome(alienForest, evt.getRegistry());
+		instance.registerBiome(hotDryBiome, evt.getRegistry());
+		instance.registerBiome(spaceBiome, evt.getRegistry());
+		instance.registerBiome(stormLandsBiome, evt.getRegistry());
+		instance.registerBiome(crystalChasms, evt.getRegistry());
+		instance.registerBiome(swampDeepBiome, evt.getRegistry());
+		instance.registerBiome(marsh, evt.getRegistry());
+		instance.registerBiome(oceanSpires, evt.getRegistry());
+		instance.registerBiome(frozenOcean,evt.getRegistry());
+		instance.registerBiome(moonHills,evt.getRegistry());
+		instance.registerBiome(moonHillsM,evt.getRegistry());
+	}
 }

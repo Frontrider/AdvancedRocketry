@@ -1,0 +1,36 @@
+{
+  "display":{
+    "description":{
+      "translate":"advancements.advancedrocketry.crystalline.desc",
+      "color":"red"
+    },
+    "title":{
+      "translate":"advancements.advancedrocketry.crystalline.title",
+      "color":"dark_gray"
+    },
+    "icon":{
+      "item":"advancedrocketry:crystallizer"
+    }
+  },
+  "parent": "advancedrocketry:advancedrocketry/holographic",
+  "criteria":{
+    "craft":{
+      "trigger":"minecraft:inventory_changed",
+      "conditions":{
+        "items": [
+          {
+            "item": "advancedrocketry:crystallizer"
+          }
+        ]
+      }
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "craft"
+    ]
+  ]
+}

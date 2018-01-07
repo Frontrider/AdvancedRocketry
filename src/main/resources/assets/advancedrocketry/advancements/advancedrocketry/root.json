@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "advancedrocketry:forcefield"
+    },
+    "title": {
+      "translate": "advancements.advancedrocketry.root.title"
+    },
+    "description": {
+      "translate": "advancements.advancedrocketry.root.description"
+    },
+    "background": "advancedrocketry:textures/blocks/vitrifiedsand.png",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "crafting_table": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "libvulpes:structuremachine"
+          }
+        ]
+      }
+    }
+  }
+}

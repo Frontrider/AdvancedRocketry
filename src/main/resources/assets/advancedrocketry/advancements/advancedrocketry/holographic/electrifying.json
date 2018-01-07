@@ -1,0 +1,36 @@
+{
+  "display":{
+    "description":{
+      "translate":"advancements.advancedrocketry.electrifying.desc",
+      "color":"red"
+    },
+    "title":{
+      "translate":"advancements.advancedrocketry.electrifying.title",
+      "color":"dark_gray"
+    },
+    "icon":{
+      "item":"advancedrocketry:electrolyser"
+    }
+  },
+  "parent": "advancedrocketry:advancedrocketry/holographic",
+  "criteria":{
+    "craft":{
+      "trigger":"minecraft:inventory_changed",
+      "conditions":{
+        "items": [
+          {
+            "item": "advancedrocketry:electrolyser"
+          }
+        ]
+      }
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "craft"
+    ]
+  ]
+}

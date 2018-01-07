@@ -1,0 +1,34 @@
+{
+  "display":{
+    "description":{
+      "translate":"advancements.advancedrocketry.oneSmallStep.desc",
+      "color":"white"
+    },
+    "title":{
+      "translate":"advancements.advancedrocketry.oneSmallStep.title",
+      "color":"dark_gray"
+    },
+    "frame":"challenge",
+    "icon":{
+      "item":"advancedrocketry:moonturf"
+    }
+  },
+  "parent": "advancedrocketry:advancedrocketry/root",
+  "criteria":{
+    "changed_dimension":{
+      "trigger":"minecraft:changed_dimension",
+      "conditions":{
+        "from":"overworld",
+        "to":"planet"
+      }
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "changed_dimension"
+    ]
+  ]
+}

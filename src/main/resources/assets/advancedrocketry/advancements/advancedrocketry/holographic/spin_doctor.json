@@ -1,0 +1,36 @@
+{
+  "display":{
+    "description":{
+      "translate":"advancements.advancedrocketry.spinDoctor.desc",
+      "color":"red"
+    },
+    "title":{
+      "translate":"advancements.advancedrocketry.spinDoctor.title",
+      "color":"dark_gray"
+    },
+    "icon":{
+      "item":"advancedrocketry:lathe"
+    }
+  },
+  "parent": "advancedrocketry:advancedrocketry/holographic",
+  "criteria":{
+    "craft":{
+      "trigger":"minecraft:inventory_changed",
+      "conditions":{
+        "items": [
+          {
+            "item": "advancedrocketry:lathe"
+          }
+        ]
+      }
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "craft"
+    ]
+  ]
+}

@@ -5,17 +5,17 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
-import zmaster587.advancedRocketry.api.AdvancedRocketryBlocks;
 
-public class BiomeGenHotDryRock extends Biome {
+public class BiomeGenHotDryRockHill extends Biome {
 
 	private static final IBlockState RED_SAND = Blocks.SAND.getDefaultState().withProperty(BlockSand.VARIANT, BlockSand.EnumType.RED_SAND);
 
 
-	public BiomeGenHotDryRock(int biomeId, boolean register) {
-		super(new BiomeProperties("Hot Dry Rock").setRainDisabled().setBaseHeight(1f).setHeightVariation(0.01f).setRainfall(0).setTemperature(0.9f));
+	public BiomeGenHotDryRockHill(int biomeId, boolean register) {
+		super(new BiomeProperties("Hot Dry Rock Hill").setRainDisabled().setBaseHeight(1.5f).setHeightVariation(0.1f).setRainfall(0).setTemperature
+				(0.9f));
 		
-        this.setRegistryName(new ResourceLocation("advancedrocketry:Hot Dry Rock"));
+        this.setRegistryName(new ResourceLocation("advancedrocketry:Hot Dry Rock Hill"));
 		
 		//hot and stinks
 		this.decorator.generateFalls=false;

@@ -1,25 +1,22 @@
 package zmaster587.advancedRocketry.world.biome;
 
+import net.minecraft.block.BlockStone;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
+import zmaster587.advancedRocketry.api.AdvancedRocketryBlocks;
+
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 
-import net.minecraft.block.BlockStone;
-import net.minecraft.init.Blocks;
-import zmaster587.advancedRocketry.AdvancedRocketry;
-import zmaster587.advancedRocketry.api.AdvancedRocketryBlocks;
-import net.minecraft.block.Block;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
+public class BiomeGenMoonMountainM extends BiomeBase {
 
-public class BiomeGenMoon extends BiomeBase {
+	//an extreme hill variant, abusing the fact, that moons have lower gravity. Really fun.
+	public BiomeGenMoonMountainM(int biomeId, boolean register) {
+		super(new BiomeProperties("Moon Mountain M").setRainDisabled().setBaseHeight(1.5f).setHeightVariation(1f).setRainfall(0).setTemperature
+				(0.3f));
 
-	public BiomeGenMoon(int biomeId, boolean register) {
-		super(new BiomeProperties("Moon").setRainDisabled().setBaseHeight(1f).setHeightVariation(0.01f).setRainfall(0).setTemperature(0.3f));
-
-		this.setRegistryName(new ResourceLocation("advancedrocketry:Moon"));
+		this.setRegistryName(new ResourceLocation("advancedrocketry:moon mountain m"));
 //		registerBiome(biomeId, "Moon", this);
 		
 		//cold and dry
@@ -28,8 +25,9 @@ public class BiomeGenMoon extends BiomeBase {
 		this.decorator.grassPerChunk=0;
 		this.decorator.treesPerChunk=0;
 		this.decorator.mushroomsPerChunk=0;
-		this.topBlock = AdvancedRocketryBlocks.blockMoonTurf.getDefaultState();
 		this.fillerBlock = AdvancedRocketryBlocks.blockMoonStone.getDefaultState();
+		this.topBlock = AdvancedRocketryBlocks.blockMoonTurf.getDefaultState();
+		//tell our generator, to generate it as if it was a desert
 		this.desert_like = true;
 		this.surfacedepth=5;
 		this.fillerdepth = 10;
@@ -38,6 +36,7 @@ public class BiomeGenMoon extends BiomeBase {
 				10,15,0,128,16,0
 		));
 	}
+
 	
 	@Override
 	public List getSpawnableList(EnumCreatureType p_76747_1_) {
@@ -48,4 +47,5 @@ public class BiomeGenMoon extends BiomeBase {
 	public float getSpawningChance() {
 		return 0f; //Nothing spawns
 	}
+
 }

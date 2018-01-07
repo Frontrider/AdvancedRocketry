@@ -1,0 +1,38 @@
+{
+  "display":{
+    "description":{
+      "translate":"advancements.advancedrocketry.dilithium.desc",
+      "color":"red"
+    },
+    "title":{
+      "translate":"advancements.advancedrocketry.dilithium.title",
+      "color":"dark_gray"
+    },
+    "icon":{
+      "item":"libvulpes:ore0",
+      "data:":0
+    }
+  },
+  "parent": "advancedrocketry:advancedrocketry/one_small_step",
+  "criteria":{
+    "pickup":{
+      "trigger":"minecraft:inventory_changed",
+      "conditions":{
+        "items": [
+          {
+            "item":"libvulpes:ore0",
+            "data:":0
+          }
+        ]
+      }
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "pickup"
+    ]
+  ]
+}

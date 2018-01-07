@@ -1,0 +1,33 @@
+{
+  "display":{
+    "description":{
+      "translate":"advancements.advancedrocketry.oneSmallStep.desc",
+      "color":"white"
+    },
+    "title":{
+      "translate":"advancements.advancedrocketry.oneSmallStep.title",
+      "color":"dark_gray"
+    },
+    "icon":{
+      "item":"advancedrocketry:moonrock"
+    },
+    "frame": "challenge"
+  },
+  "parent": "advancedrocketry:advancedrocketry/exploration/moon_landing",
+  "criteria":{
+    "changed_dimension":{
+      "trigger":"minecraft:enter_block",
+      "conditions":{
+        "block": "advancedrocketry:moonturf"
+      }
+    }
+  },
+  "rewards":{
+
+  },
+  "requirements":[
+    [
+      "changed_dimension"
+    ]
+  ]
+}
