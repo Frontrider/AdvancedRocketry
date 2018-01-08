@@ -17,7 +17,7 @@ import net.minecraft.world.biome.Biome;
 public class BiomeGenMoon extends BiomeBase {
 
 	public BiomeGenMoon(int biomeId, boolean register) {
-		super(new BiomeProperties("Moon").setRainDisabled().setBaseHeight(1f).setHeightVariation(0.01f).setRainfall(0).setTemperature(0.3f));
+		super((CustomBiomeProperties) new CustomBiomeProperties("Moon").setRainDisabled().setBaseHeight(1f).setHeightVariation(0.01f).setRainfall(0).setTemperature(0.3f));
 
 		this.setRegistryName(new ResourceLocation("advancedrocketry:Moon"));
 //		registerBiome(biomeId, "Moon", this);

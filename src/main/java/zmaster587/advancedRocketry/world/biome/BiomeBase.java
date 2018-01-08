@@ -1,8 +1,8 @@
 package zmaster587.advancedRocketry.world.biome;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockSand;
-import net.minecraft.block.BlockStone;
+
+import com.sun.istack.internal.NotNull;
+import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -10,11 +10,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.gen.ChunkGeneratorSettings;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import zmaster587.advancedRocketry.block.planet.BlockPlanetSoil;
-
-import javax.print.attribute.HashAttributeSet;
+import javax.annotation.Nullable;
 import java.util.*;
 
 /***
@@ -31,8 +28,13 @@ public class BiomeBase extends Biome {
     protected int surfacedepth = 1;
     private  boolean decorating = false;
     protected ArrayList<stonegenSettings> stones = new ArrayList<>();
-    public BiomeBase(BiomeProperties p_i46713_1_) {
-        super(p_i46713_1_);
+    private String biomeName;
+    public CustomBiomeProperties properties;
+    public BiomeBase(CustomBiomeProperties customBiomeProperties) {
+
+        super(customBiomeProperties);
+        this.properties = customBiomeProperties;
+        this.biomeName = customBiomeProperties.biomeName;
     }
 
     @Override
@@ -47,7 +49,6 @@ public class BiomeBase extends Biome {
         } else {
 
                 this.decorating = true;
-
                 {
                     for(stonegenSettings data :stones){
                             WorldGenMinable gen = new WorldGenMinable(data.getStone(), data.getASize(random));
@@ -61,6 +62,11 @@ public class BiomeBase extends Biome {
         }
     }
 
+    @Override
+    public String getBiomeName()
+    {
+        return biomeName+" customized name";
+    }
 
     public  void generateCustomBiomeTerrain(World world, Random random, ChunkPrimer primer,
                                             int x, int z, double p_generateBiomeTerrain_6_) {
@@ -205,4 +211,157 @@ public class BiomeBase extends Biome {
             return  random.nextInt(getSizeRange())+minsize;
         }
     }
+
+
+    public static class CustomBiomeProperties extends Biome.BiomeProperties {
+        private final String biomeName;
+        private float baseHeight = 0.1F;
+        private float heightVariation = 0.2F;
+        private float temperature = 0.5F;
+        private float rainfall = 0.5F;
+        private int waterColor = 16777215;
+        private boolean enableSnow;
+        private boolean enableRain = true;
+        @Nullable
+        private String baseBiomeRegName;
+        private IBlockState material;
+        private int sealevel=60;
+        private boolean generateSnow;
+
+        public CustomBiomeProperties(String name) {
+            super(name);
+            this.biomeName = name;
+        }
+
+        @Override
+        @MethodsReturnNonnullByDefault
+        @NotNull
+        public Biome.BiomeProperties setTemperature(float tempature) {
+            if (tempature > 0.1F && tempature < 0.2F) {
+                throw new IllegalArgumentException("Please avoid temperatures in the range 0.1 - 0.2 because of snow");
+            } else {
+                this.temperature = tempature;
+                return this;
+            }
+        }
+        @Override
+        @MethodsReturnNonnullByDefault
+        @NotNull        public Biome.BiomeProperties setRainfall(float rainfall) {
+            this.rainfall = rainfall;
+            return this;
+        }
+        @Override
+        @MethodsReturnNonnullByDefault
+        @NotNull
+        public Biome.BiomeProperties setBaseHeight(float baseheight) {
+            this.baseHeight = baseheight;
+            return this;
+        }
+        @Override
+        @MethodsReturnNonnullByDefault
+        @NotNull
+        public Biome.BiomeProperties setHeightVariation(float heightvariation) {
+            this.heightVariation = heightvariation;
+            return this;
+        }
+        @Override
+        @MethodsReturnNonnullByDefault
+        @NotNull
+        public Biome.BiomeProperties setRainDisabled() {
+            this.enableRain = false;
+            return this;
+        }
+        @Override
+        @MethodsReturnNonnullByDefault
+        @NotNull
+        public Biome.BiomeProperties setSnowEnabled() {
+            this.enableSnow = true;
+            return this;
+        }
+        @Override
+        @MethodsReturnNonnullByDefault
+        @NotNull
+        public Biome.BiomeProperties setWaterColor(int watercolor) {
+            this.waterColor = watercolor;
+            return this;
+        }
+        @Override
+        @MethodsReturnNonnullByDefault
+        @NotNull
+        public Biome.BiomeProperties setBaseBiome(String baseBiome) {
+            this.baseBiomeRegName = baseBiome;
+            return this;
+        }
+        public String getBiomeName() {
+            return biomeName;
+        }
+
+        public IBlockState getMaterial() {
+            return material;
+        }
+
+        public void setMaterial(IBlockState material) {
+            this.material = material;
+        }
+
+        public int getSealevel() {
+            return sealevel;
+        }
+
+        public void setSealevel(int sealevel) {
+            this.sealevel = sealevel;
+        }
+
+        public boolean isGenerateSnow() {
+            return generateSnow;
+        }
+
+        public void setGenerateSnow(boolean generateSnow) {
+            this.generateSnow = generateSnow;
+        }
+
+        public boolean isEnableSnow() {
+            return enableSnow;
+        }
+
+        public void setEnableSnow(boolean enableSnow) {
+            this.enableSnow = enableSnow;
+        }
+
+        public boolean isEnableRain() {
+            return enableRain;
+        }
+
+        public void setEnableRain(boolean enableRain) {
+            this.enableRain = enableRain;
+        }
+
+        public int getWaterColor() {
+            return waterColor;
+        }
+
+
+        public float getRainfall() {
+            return rainfall;
+        }
+
+        public float getTemperature() {
+            return temperature;
+        }
+
+
+        public float getHeightVariation() {
+            return heightVariation;
+        }
+
+
+        public float getBaseHeight() {
+            return baseHeight;
+        }
+
+    }
+
+
+
+
 }

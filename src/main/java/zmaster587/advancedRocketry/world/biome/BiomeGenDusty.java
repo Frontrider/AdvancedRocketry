@@ -10,7 +10,9 @@ public class BiomeGenDusty extends BiomeBase {
     // but its intended to have no atmosphere,
     // (no cacti) or have a custom world gen.
     public BiomeGenDusty(int biomeId, boolean register) {
-        super(new Biome.BiomeProperties("Dusty Rock").setRainDisabled().setBaseHeight(1f).setHeightVariation(0.01f).setRainfall(0).setTemperature
+        super((CustomBiomeProperties) new CustomBiomeProperties("Dusty Rock").setRainDisabled().setBaseHeight(1f).setHeightVariation(0.01f)
+                .setRainfall
+                (0).setTemperature
                 (0.9f));
 
         this.setRegistryName(new ResourceLocation("advancedrocketry:Dusty Rock"));

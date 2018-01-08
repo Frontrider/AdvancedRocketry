@@ -1330,10 +1330,6 @@ public class AdvancedRocketry {
 					dimensionProperties.addBiome(AdvancedRocketryBiomes.moonBiome);
 					dimensionProperties.addBiome(AdvancedRocketryBiomes.moonHillsM);
 					dimensionProperties.addBiome(AdvancedRocketryBiomes.moonBiome);
-					dimensionProperties.oreProperties.addEntry(
-							Blocks.STONE.getDefaultState().withProperty(BlockStone.VARIANT,BlockStone.EnumType.ANDESITE),
-							0,256,10,5
-							);
 
 					dimensionProperties.setParentPlanet(DimensionManager.overworldProperties);
 					dimensionProperties.setStar(DimensionManager.getSol());

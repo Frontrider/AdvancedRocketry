@@ -13,7 +13,7 @@ public class BiomeGenMoonMountainM extends BiomeBase {
 
 	//an extreme hill variant, abusing the fact, that moons have lower gravity. Really fun.
 	public BiomeGenMoonMountainM(int biomeId, boolean register) {
-		super(new BiomeProperties("Moon Mountain M").setRainDisabled().setBaseHeight(1.5f).setHeightVariation(1f).setRainfall(0).setTemperature
+		super((CustomBiomeProperties) new CustomBiomeProperties("Moon Mountain M").setRainDisabled().setBaseHeight(1.5f).setHeightVariation(1f).setRainfall(0).setTemperature
 				(0.3f));
 
 		this.setRegistryName(new ResourceLocation("advancedrocketry:moon mountain m"));

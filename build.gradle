@@ -191,3 +191,10 @@ buildScan {
     tag System.getProperty('os.name')                                            
 }
 */
+
+jar {
+
+    manifest {
+        attributes 'FMLAT': 'MODID_at.cfg'
+    }
+}

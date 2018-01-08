@@ -14,7 +14,7 @@ public class BiomeGenMoonMountain extends BiomeBase {
 	//Gives extra height variation to the moon.
 	//Its surprising how mutch better the world looks like, just because its not completly flat.
 	public BiomeGenMoonMountain(int biomeId, boolean register) {
-		super(new BiomeProperties("Moon Mountain").setRainDisabled().setBaseHeight(1.5f).setHeightVariation(.7f).setRainfall(0).setTemperature
+		super((CustomBiomeProperties) new CustomBiomeProperties("Moon Mountain").setRainDisabled().setBaseHeight(1.5f).setHeightVariation(.7f).setRainfall(0).setTemperature
 				(0.3f));
 
 		this.setRegistryName(new ResourceLocation("advancedrocketry:moon mountain"));
